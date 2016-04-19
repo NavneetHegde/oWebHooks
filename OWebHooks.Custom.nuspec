@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>OWebHooks</id>
+        <version>1.0.0</version>
+        <title>Custom WebHooks Authorized Module</title>
+        <authors>navneet.hegde</authors>
+        <owners>navneet.hegde</owners>
+        <licenseUrl>http://www.google.com</licenseUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>This package provides support for Authorized WebHooks sending using AspNet WebHooks.</description>
+        <copyright>All rights reserved.</copyright>
+        <tags>AspNet WebHooks AspNetWebHooks AuthorizedWebHooks</tags>
+    </metadata>
+    <files>
+        <file src="lib\net45\OWebHooks.Custom.dll" target="lib\net45\OWebHooks.Custom.dll" />
+        <file src="lib\net45\OWebHooks.Custom.XML" target="lib\net45\OWebHooks.Custom.XML" />
+    </files>
+</package>
