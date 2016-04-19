@@ -1,0 +1,28 @@
+﻿<div class="span6">
+    <h1 class="page-header">Registration List</h1>
+    
+    <a ng-click="createNewRegitration()" class="btn btn-info">create new registration</a>
+    <p />
+    <div class="list-group" ng-repeat="registration in registrations">
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">{{registration.Description}}</h4>
+            <p class="list-group-item-text"><span style="font-weight:bold">WebHook URL :</span>{{registration.WebHookUri}}</p>
+            <p class="list-group-item-text"><span>Id :</span>{{registration.Id}}</p>
+            <p class="list-group-item-text"><span>Is Paused :</span>{{registration.IsPaused}}</p>
+            <div>
+                <span>Headers </span>
+                <span ng-repeat="header in registration.Headers">
+                    <span>{{header}}</span>
+                </span>
+            </div>
+            <div>
+                <span>Filters </span>
+                <span ng-repeat="filter in registration.Filters">
+                    <span>{{filter}}</span>
+                </span>
+            </div>
+            <span ng-click="editRegistration(registration.Id)" class="badge">edit</span>
+            <span ng-click="deleteRegistration(registration.Id)" class="badge">delete</span>
+        </a>
+    </div>
+</div>

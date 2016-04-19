@@ -1,0 +1,18 @@
+﻿{
+  "Id": "4",
+  "WebHookUri": "http://localhost.fiddler:48502/My",
+  "Secret": "123456789012345678901234567890123456789012345678",
+  "Description": "TestUser",
+  "IsPaused": false,
+  "Filters": [
+    "*"
+  ],
+  "Headers": {
+    "header1": "hv1"
+  },
+  "Properties": {
+    "p1": "pv1"
+  }
+}
+
+//{"p1":"p12","Authorization_Type":"oauth", "Authorization_Token_Url": "http://localhost.fiddler:59822/oauth/token", "Authorization_UserName": "SuperPowerUser", "Authorization_Password":"MySuperP@ss!"}

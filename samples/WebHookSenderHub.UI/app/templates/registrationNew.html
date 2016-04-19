@@ -1,0 +1,61 @@
+﻿<div class="container">
+    <h1 class="row page-header">
+        New Registration
+    </h1>
+    <div class="row">
+        <form novalidate="novalidate" role="form">
+            <div class="form-group">
+                <div class="controls">
+                    <a ng-click="cancel()" class="btn btn-info">cancel</a>
+                    <a ng-click="createNewRegistration()" class="btn btn-info">save</a>
+                </div>
+            </div>
+            <!--<div class="form-group">
+                <label for="id">Id:</label>
+                <input type="text" ng-model="registration.Id" class="form-control" id="id">
+            </div>-->
+            <div class="form-group">
+                <label for="WebHookUri">WebHook Url:</label>
+                <input type="url" ng-model="registration.WebHookUri" class="form-control" id="WebHookUri" required>
+            </div>
+            <div class="form-group">
+                <label for="Secret">Secret:</label>
+                <input type="password" ng-model="registration.Secret" class="form-control" id="Secret" required ng-minlength="10">
+            </div>
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <input type="text" ng-model="registration.Description" class="form-control" id="Description">
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label for="IsPaused">
+                        <input type="checkbox" ng-model="registration.IsPaused" id="IsPaused">Webhook Paused :
+                    </label>
+                    <p class="small">Event details won't be delivered when this webhook is triggered</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Filters">Which events to trigger this webhook for?</label>
+                <div class="form-group checkbox">
+                    <label ng-repeat="filter in allFilters">
+                        <input name="eventSelect" type="checkbox" checklist-model="registration.Filters" ng-click="toggleSelect()" checklist-value="filter">{{filter}} &nbsp;
+                    </label>
+                </div>
+                <input ng-checked="registration.Filters.indexOf('*') > -1" type="checkbox" ng-model="isAllSelected" ng-click="toggleAll()"> All Events
+            </div>
+            <div class="form-group">
+                <label for="Headers">Headers: </label>
+                <span class="small">{Json format ex: { "head1" : "headOneValue", "head2" : "headTwoValue"}}</span>
+                <input type="text" json-text ng-model='registration.Headers' class="form-control" id="Headers" />
+            </div>
+            <div class="form-group">
+                <label for="Properties">Properties:</label>
+                <span class="small">(Json format ex: { "prop1" : "propOneValue", "prop2" : "propTwoValue"})</span>
+                <input type="text" json-text ng-model='registration.Properties' class="form-control" id="Properties" />
+            </div>
+            <div class="error-container" ng-show="registration.WebHookUri.$dirty && registration.WebHookUri.$invalid">
+                <small class="text-danger" ng-show="registration.WebHookUri.$error.required">WebHood Uri required</small>
+            </div>
+        </form>
+    </div>
+</div>
